@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Scriptkid_Reviewcoupon>
+			<version>0.1.0</version>
+		</Scriptkid_Reviewcoupon>
+	</modules>
+	<frontend>
+		<routers>
+			<reviewcoupon>
+				<use>standard</use>
+				<args>
+					<module>Scriptkid_Reviewcoupon</module>
+					<frontName>reviewcoupon</frontName>
+				</args>
+			</reviewcoupon>
+		</routers>
+		<layout>
+			<updates>
+				<reviewcoupon>
+					<file>reviewcoupon.xml</file>
+				</reviewcoupon>
+			</updates>
+		</layout>
+	</frontend>
+
+	 
+	<global>
+		<rewrite>
+			<ajax_coupon> 
+				<from><![CDATA[#^/checkout/cart/#]]></from>  <!-- the URL which u want to override-->
+				<to>/reviewcoupon/index/</to>  <!-- destination url -->
+			</ajax_coupon>
+		</rewrite>
+		<models>
+			<reviewcoupon>
+				<class>Scriptkid_Reviewcoupon_Model</class>
+				<resourceModel>reviewcoupon_mysql4</resourceModel>
+			</reviewcoupon>
+			<reviewcoupon_mysql4>
+				<class>Scriptkid_Reviewcoupon_Model_Mysql4</class>
+				<entities>
+					
+				</entities>
+			</reviewcoupon_mysql4>
+		</models>
+		<resources>
+			<reviewcoupon_setup>
+				<setup>
+					<module>Scriptkid_Reviewcoupon</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</reviewcoupon_setup>
+			<reviewcoupon_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</reviewcoupon_write>
+			<reviewcoupon_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</reviewcoupon_read>
+		</resources>
+		
+		<helpers>
+			<reviewcoupon>
+				<class>Scriptkid_Reviewcoupon_Helper</class>
+			</reviewcoupon>
+		</helpers>
+	</global>
+</config>

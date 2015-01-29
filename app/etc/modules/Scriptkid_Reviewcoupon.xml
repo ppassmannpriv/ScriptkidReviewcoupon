@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Shweta_Ajaxcoupon>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Shweta_Ajaxcoupon>
+    </modules>
+</config> 
